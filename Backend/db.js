@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const url = "mongodb://localhost:27017/harrykart";
+const url = "mongodb://localhost:27017/inotebook";
 
 main().catch((err) => {
     console.log(err);
