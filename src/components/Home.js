@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Notes from './Notes';
 function Home() {
     return (
         <>
@@ -21,9 +21,7 @@ function Home() {
                     </div>
                     <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
-                <div className="container my-3">
-                    <h4>Your Notes</h4>
-                </div>
+                <Notes />
             </div>
         </>
     )
