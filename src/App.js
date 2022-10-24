@@ -8,12 +8,14 @@ import Home from './components/Home'
 import About from './components/About'
 import Navbar from './components/Navbar'
 import NoteState from './context/Notes/NotesState';
+import Alert from './components/Alert';
 function App() {
   return (
     <>
       <NoteState>
         <Router>
           <Navbar />
+          <Alert message={"this is an alert!!"} />
           <div className="container">
             <Routes>
               <Route path="/" element={<Home />} />

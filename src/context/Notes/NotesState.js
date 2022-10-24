@@ -4,7 +4,7 @@ import { useState } from "react";
 const NoteState = (props) => {
     const notesInitial = [
         {
-            "_id": "6351f8e63739ca7f871b91fe",
+            "_id": "63563739ca7fy871b91fe",
             "user": "6351f89b3739ca7f871b91f7",
             "title": "Tuesday",
             "description": "Today is gonna to be a good day",
@@ -13,7 +13,7 @@ const NoteState = (props) => {
             "__v": 0
         },
         {
-            "_id": "6351f8e73739ca7f871b9200",
+            "_id": "6351f8e573739ca7f871b920",
             "user": "6351f89b3739ca7f871b91f7",
             "title": "wednesday",
             "description": "Today is gonna to be a good day",
@@ -22,7 +22,7 @@ const NoteState = (props) => {
             "__v": 0
         },
         {
-            "_id": "6351f8e73739ca7f871b9202",
+            "_id": "6351f8e73739cf8y71b9202",
             "user": "6351f89b3739ca7f871b91f7",
             "title": "Thursday",
             "description": "Today is gonna to be a good day",
@@ -31,7 +31,7 @@ const NoteState = (props) => {
             "__v": 0
         },
         {
-            "_id": "6351f8e73739ca7f871b9200",
+            "_id": "6351f8e57373b9200",
             "user": "6351f89b3739ca7f871b91f7",
             "title": "wednesday",
             "description": "Today is gonna to be a good day",
@@ -40,7 +40,7 @@ const NoteState = (props) => {
             "__v": 0
         },
         {
-            "_id": "6351f8e73739ca7f871b9202",
+            "_id": "6351f8e79ca7f871b9y202",
             "user": "6351f89b3739ca7f871b91f7",
             "title": "Thursday",
             "description": "Today is gonna to be a good day",
@@ -49,7 +49,7 @@ const NoteState = (props) => {
             "__v": 0
         },
         {
-            "_id": "6351f8e73739ca7f871b9200",
+            "_id": "6351f8e73739ca71b9200",
             "user": "6351f89b3739ca7f871b91f7",
             "title": "wednesday",
             "description": "Today is gonna to be a good day",
@@ -58,7 +58,7 @@ const NoteState = (props) => {
             "__v": 0
         },
         {
-            "_id": "6351f8e73739ca7f871b9202",
+            "_id": "6351f8e73739f871b9202",
             "user": "6351f89b3739ca7f871b91f7",
             "title": "Thursday",
             "description": "Today is gonna to be a good day",
@@ -67,7 +67,7 @@ const NoteState = (props) => {
             "__v": 0
         },
         {
-            "_id": "6351f8e73739ca7f871b9200",
+            "_id": "6351f8739hca7f871b9200",
             "user": "6351f89b3739ca7f871b91f7",
             "title": "wednesday",
             "description": "Today is gonna to be a good day",
