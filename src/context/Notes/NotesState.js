@@ -3,6 +3,7 @@ import { useState } from "react";
 
 const NoteState = (props) => {
     const host = "http://localhost:5000/api";
+    const id = "6351f8e63739ca7f871b91fe";
     const notesInitial = [];
     const [notes, setNotes] = useState(notesInitial);
 
@@ -51,12 +52,20 @@ const NoteState = (props) => {
     }
 
 
-
-
-
-
     //delete a note
-    const deleteNote = (id) => {
+    const deleteNote = async (id) => {
+        //API call
+        const response = await fetch(`${host}/notes/deletenote/${id}`, {
+            method: 'DELETE',
+
+            headers: {
+                'Content-Type': 'application/json',
+                'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjM1MWY4OWIzNzM5Y2E3Zjg3MWI5MWY3In0sImlhdCI6MTY2NjMxNjQ0M30.YZKapmGClj16cdv8eUFVVpDzq3HiuAq_5qCN60XU0Ns'
+            }
+
+        });
+        const json = response.json();
+        console.log(json);
         const newNotes = notes.filter((note) => { return note._id !== id });
         setNotes(newNotes);
     }
@@ -67,7 +76,7 @@ const NoteState = (props) => {
     const editNote = async (id, title, description, tag) => {
         //API call
 
-        const response = await fetch(`${host}/notes/updatenote/6351f8e53739ca7f871b91fc`, {
+        const response = await fetch(`${host}/notes/updatenote/6351f8e63739ca7f871b91fe`, {
             method: 'PUT',
 
             headers: {
@@ -77,7 +86,8 @@ const NoteState = (props) => {
 
             body: JSON.stringify({ title, description, tag })
         });
-        const json = response.json();
+        console.log(response.json());
+        // const json = response.json();
 
         // Logic to client side
         for (let index = 0; index < notes.length; index++) {
