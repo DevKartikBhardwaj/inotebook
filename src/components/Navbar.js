@@ -21,6 +21,10 @@ function Navbar() {
                             <Link className="nav-link" style={{ color: location.pathname === "/about" ? "white" : " rgb(178, 175, 175)" }} to="/about">About</Link>
                         </li>
                     </ul>
+                    <form className="d-flex">
+                        <Link className="btn btn-primary mx-1" to={"/login"} role="button">Login</Link>
+                        <Link className="btn btn-primary mx-1" to={"/signup"} role="button">Signup</Link>
+                    </form>
                 </div>
             </div>
         </nav >
