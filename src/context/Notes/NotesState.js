@@ -1,9 +1,10 @@
 import NoteContext from "./NotesContext";
 import { useState } from "react";
+// import { json } from "react-router-dom";
 
 const NoteState = (props) => {
     const host = "http://localhost:5000/api";
-    const id = "6351f8e63739ca7f871b91fe";
+    // const id = "6351f8e63739ca7f871b91fe";
     const notesInitial = [];
     const [notes, setNotes] = useState(notesInitial);
 
@@ -19,7 +20,7 @@ const NoteState = (props) => {
             }
         });
         const json = await response.json();
-        console.log(json);
+
         setNotes(json);
     }
     //Add a note
@@ -37,17 +38,7 @@ const NoteState = (props) => {
 
             body: JSON.stringify({ title, description, tag })
         });
-
-
-        const note = {
-            "_id": "6351f8739hca7f871b9200",
-            "user": "6351f89b3739ca7f871b91f7",
-            "title": title,
-            "description": description,
-            "tag": tag,
-            "date": "2022-10-21T01:41:59.047Z",
-            "__v": 0
-        }
+        const note = await response.json();
         setNotes(notes.concat(note))
     }
 
@@ -64,8 +55,8 @@ const NoteState = (props) => {
             }
 
         });
-        const json = response.json();
-        console.log(json);
+        const json = await response.json();
+
         const newNotes = notes.filter((note) => { return note._id !== id });
         setNotes(newNotes);
     }
@@ -76,7 +67,7 @@ const NoteState = (props) => {
     const editNote = async (id, title, description, tag) => {
         //API call
 
-        const response = await fetch(`${host}/notes/updatenote/6351f8e63739ca7f871b91fe`, {
+        const response = await fetch(`${host}/notes/updatenote/${id}`, {
             method: 'PUT',
 
             headers: {
@@ -86,18 +77,22 @@ const NoteState = (props) => {
 
             body: JSON.stringify({ title, description, tag })
         });
-        console.log(response.json());
+
         // const json = response.json();
 
+
+        let newNotes = JSON.parse(JSON.stringify(notes));
         // Logic to client side
-        for (let index = 0; index < notes.length; index++) {
+        for (let index = 0; index < newNotes.length; index++) {
             const element = notes[index];
             if (element._id === id) {
-                element.title = title;
-                element.description = description;
-                element.tag = tag;
+                newNotes[index].title = title;
+                newNotes[index].description = description;
+                newNotes[index].tag = tag;
+                break;
             }
         }
+        setNotes(newNotes);
     }
     return (
         <NoteContext.Provider value={{ notes, addNote, deleteNote, editNote, getNotes }}>
